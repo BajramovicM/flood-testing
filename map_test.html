@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Intro to MapView - Create a 2D map - 4.10</title>
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      height: 600px;
+	  width: 1000px;
+    }
+
+    .layers {
+      position: absolute;
+    right: 173px;
+    top: 50px;
+    }
+    .simple-button button{
+      width: 150px;
+      height: 50px;
+      margin-top: 25px;
+    }
+  </style>
+<script
+src="https://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.10/"></script>
+
+  <script src="map_js5.js"></script>
+
+  <script>
+      var exportMap;
+  </script>
+</head>
+
+<body>
+    <div id="viewDiv"></div>
+    <div id="info-div">
+      Select a demographic variable<br><br>
+      <select id="layer-select">
+        <option value="0">Population density</option>
+        <option value="1" selected>Renter occupied units</option>
+        <option value="2">Median age</option>
+      </select>
+    </div>
+    <div class="layers">
+      <h2>Enable/Disable layer</h2>
+      <input type="checkbox" name="vehicle1" value="1" checked> LOMRs<br>
+      <input type="checkbox" name="vehicle1" value="3" checked> FIRM<br>
+      <input type="checkbox" name="vehicle1" value="4" checked> BaseIndex<br>
+      <input type="checkbox" name="vehicle1" value="16" checked> Elevations<br>
+      <input type="checkbox" name="vehicle1" value="27" checked> Boundaries<br>
+      <input type="checkbox" name="vehicle1" value="28" checked> HazardZones<br>
+      
+      <div class="simple-button">
+          <button onclick=exportMap()>EXPORT MAP</button>
+      </div>
+      
+    </div>
+  <!-- <div class="simple-button"></div> -->
+</body>
+</html>
